@@ -1,0 +1,29 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    cat_api (0.0.2)
+      nokogiri (~> 1.6.5)
+      rest-client (~> 1.7.2)
+    mime-types (2.4.3)
+    mini_portile (0.6.2)
+    netrc (0.10.2)
+    nokogiri (1.6.5)
+      mini_portile (~> 0.6.0)
+    rack (1.6.0)
+    rack-protection (1.5.3)
+      rack
+    rest-client (1.7.2)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    tilt (1.4.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  cat_api
+  sinatra (~> 1.4.5)

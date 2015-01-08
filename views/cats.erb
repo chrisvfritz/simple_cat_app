@@ -1,0 +1,37 @@
+<h1>The Ultimate Cat App</h1>
+
+<form action="/cats" method="get">
+  <div class="form-group">
+    <label for="results_per_page">Number of Cats</label>
+    <input name="results_per_page" value="<%= params[:results_per_page] %>" type="number" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="category">Category</label>
+    <select name="category" class="form-control">
+      <option value="">All</option>
+      <% %w(hats space funny sunglasses boxes caturday ties dream kittens sinks clothes).each do |category| %>
+        <option value="<%= category %>" <%= 'selected="selected"' if params[:category] == category %>><%= category.capitalize %></option>
+      <% end %>
+    </select>
+  </div>
+   <div class="form-group">
+    <label for="type">Type</label>
+    <select name="type" class="form-control">
+      <option value="">All</option>
+      <% %w(jpg png gif).each do |type| %>
+        <option value="<%= type %>" <%= 'selected="selected"' if params[:type] == type %>><%= type.upcase %></option>
+      <% end %>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary btn-block">Give catz 2 me!</button>
+</form>
+
+<hr>
+
+<div id="cats" class="well text-center">
+  <% @pictures.each do |pic| %>
+    <a href="<%= pic.source_url %>">
+      <img src="<%= pic.url %>" class="img-responsive img-thumbnail">
+    </a>
+  <% end %>
+</div>
